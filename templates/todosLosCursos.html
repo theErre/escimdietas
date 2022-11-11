@@ -1,0 +1,25 @@
+{% extends 'listadosGenerales.html' %}
+{% block pestania %}
+<div class="table">
+    <table>
+        <thead>
+            <tr class="sticky">
+                <th>Curso</th>
+                <th>Voluntarios</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            {% for datos in tripulantes %}
+            <tr>
+                <td style="display: none;">{{ datos.0 }}</td>
+                <td>{{ datos.1 }}</td>
+                <td>{{ datos.3 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static', filename='js/listadosGenerales.js') }}"></script>
+{% endblock %}

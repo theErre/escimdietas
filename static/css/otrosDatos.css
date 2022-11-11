@@ -1,0 +1,100 @@
+.contenedor .contenido .info .form input[type=text] {
+    width: 100%;
+    padding: 10px 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+
+.contenedor .contenido .info .form input[type=email]{
+    width: 100%;
+    padding: 10px 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box;
+}
+
+.contenedor .contenido .info .form input[type=text]:disabled{
+    color: #000;
+}
+
+.contenedor .contenido .info .form input[type=radio][disabled]{
+    background-color: #35448f;
+}
+
+.contenedor .contenido .info .form input[type=date]:disabled {
+    color: #000;
+}
+
+.contenedor .contenido .info .form input[type=date] {
+    width: 100%;
+    padding: 8px 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box;
+}
+
+.contenedor .contenido .info .form a{
+    display: block;
+    width: 100% - 40px;
+    background: #35448f;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.contenedor .contenido .info .form input[type=submit]{
+    grid-area: boton;
+    display: block;
+    width: 100%;
+    background: #35448f;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.contenedor .contenido .info .form input[type=submit]:hover,
+.contenedor .contenido .info .form a:hover {
+    background: #12203e;
+}
+
+.contenedor .contenido .info .form .box {
+    width: 100%;
+    padding: 10px 0;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#title {
+    display: block;
+    border-bottom: 3px solid #12203e;
+    margin-bottom: 8px;
+}
+
+.contenedor .contenido .info .form .box label{
+    padding: 0 15px;
+}
+
+#box-trabajo, #box-estudio {
+    display: none ;
+}
+
+
+

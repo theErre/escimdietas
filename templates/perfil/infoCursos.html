@@ -1,0 +1,33 @@
+{% extends 'editar.html' %} {% block css%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/infoCursos.css') }}"> {% endblock %} {% block contenido %}
+<div class="table">
+    <table>
+        <thead>
+            <tr class="sticky">
+                <th class="fecha">Fecha</th>
+                <th>Cursos Realizados</th>
+                <th>Nota</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            {% if tripulante.cursos %}
+                {% for datos in tripulante.cursos %}
+                <tr onclick="window.location.href='/perfil/{{ datos.1 }}/infoCursosEdit/{{ datos.0 }}'">
+                    <td class="fecha">{{ datos.2 }}</td>
+                    <td>{{ datos.6 }}</td>
+                    <td>{{ datos.7 }}</td>
+                </tr>
+                {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="4">No hay datos que mostar</td>
+            </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+<a href="infoCursosNuevo">Agregar</a>
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static', filename='js/infoCursos.js') }}"></script>
+{% endblock %} 

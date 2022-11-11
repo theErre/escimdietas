@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/imprimir.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/listadoMateriasPostula.css') }}">
+    <title>{{ tripulante.info.3 }} {{ tripulante.info.5 }} </title>
+</head>
+<body>
+    <h2>Materias a las que se postula</h2>
+    <table>
+        <tr>
+            <td rowspan="7" class="perfil">
+                <img src="/static/img/imgDigitalizadas/{{ tripulante.info.0 }}/{{ tripulante.info.9 }}">
+            </td>
+        </tr>
+        <tr>
+            <td class="col1">Nombre completo</td>
+            <td>{{ tripulante.info.3 }} {{ tripulante.info.5 }}</td>
+        </tr>
+        <tr>
+            <td class="col1">Cedula de Identidad</td>
+            <td>{{ tripulante.info.16 }}</td>
+        </tr>
+        <tr>
+            <td class="col1">Domicilio</td>
+            <td>{{ tripulante.otros.3 }}</td>
+        </tr>
+        <tr>
+            <td class="col1">Numero de Celular</td>
+            <td>{{ tripulante.otros.5 }}</td>
+        </tr>
+        <tr>
+            <td class="col1">Telefono</td>
+            <td>{{ tripulante.otros.6 }}</td>
+        </tr>
+        <tr>
+            <td class="col1">Correo</td>
+            <td>{{ tripulante.otros.7 }}</td>
+        </tr>
+    </table>
+    <div class="table">
+        <table>
+            <thead>
+                <tr class="sticky">
+                    <th>Materias</th>
+                    <th>Horas</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                {% if tripulante.materias %}
+                    {% for datos in tripulante.materias %}
+                            <tr>
+                                <td style="display: none;">{{ datos.0 }}</td>
+                                <td>{{ datos.1 }}</td>
+                                <td>{{ datos.2 }}</td>
+                            </tr>
+                    {% endfor %}
+                {% else %}
+                <tr>
+                    <td colspan="3" style="text-align: center;">No hay datos que mostar</td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+    <h4 id="horasTotales">Cantidad de horas Totales: {{ tripulante.horas }}</h4>
+    <a onclick="window.print();">Imprimir</a>
+    <a href="/perfil/{{ tripulante.info.0 }}/infoPersonal">Volver</a>
+    <script src="{{ url_for('static', filename='js/imprimir_materias.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/anexo1.css') }}">
+    <title>Anexo 1</title>
+</head>
+<body>
+{% for datos in tripulantes %}
+    {% if datos.1 %}
+    <table>
+        <tr>
+            <td colspan="6" style="padding-bottom: 10px;">{{ datos.0 }}</td>
+        </tr>
+        <tr>
+            <td>ITEM</td>
+            <td>CEDULA</td>
+            <td>NOMBRE APELLIDO, GRADO ESPECIALIDAD</td>
+            <td>GRADO</td>
+            <td>CALIDAD</td>
+            <td>MATERIA</td>
+        </tr>
+        {% for i in datos.1 %}
+        <!-- ORDENAR POR GRADO AUNQUE EL TITULAR TENGA MENOR CATEGORIA -->
+        <tr>
+            <td>{{ i.0 }}</td>
+            <td>{{ i.3 }}</td>
+            <td style="text-transform: capitalize;">{{ i.4 }} {{ i.5 }}, {{ i.6 }} ({{ i.7 }})</td>
+            <td> {{ i.1 }} </td>
+            <td> {{ i.8 }}</td>
+            <td> {{ i.9 }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+{% endfor %}
+
+<script src="{{ url_for('static', filename='js/totalDeVoluntarios.js') }}"></script>
+</body>
+</html>

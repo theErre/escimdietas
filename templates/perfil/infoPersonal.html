@@ -1,0 +1,33 @@
+{% extends 'editar.html' %} 
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/infoPersonal.css') }}"> 
+{% endblock %} 
+{% block contenido %}
+<form>
+    <div class="columna1">
+        <label for="nombre">Nombres</label><input type="text" name="nombre" value="{{ tripulante.info.3 }} {{ tripulante.info.4 }}">
+        <label for="legajo">Legajo</label><input type="text" name="legajo" id="legajo" value="{{ tripulante.info.0 }}">
+        <label for="especialidad">Especialidad</label><input type="text" name="especialidad" value="{{ tripulante.info.2}}" style="text-transform: uppercase;">
+        <label for="compania">Compañia</label><input type="text" name="compania" value="{{ tripulante.info.10 }}">
+        <label for="lugar_nacimiento">Nacido en</label><input type="text" name="lugar_nacimiento" value="{{ tripulante.info.12 }}">
+        <label for="edad">Edad</label><input type="text" name="edad" id="edad">
+        <label for="credencial_serie">Credencial Civica Serie</label><input type="text" name="credencial_serie" value="{{ tripulante.info.14 }}" style="text-transform: uppercase;">
+        <label for="cedula">Cedula de Identidad</label><input type="text" name="cedula" value="{{ tripulante.info.16 }}">
+    </div>
+    <div class="columna2">
+        <label for="apellido">Apellidos</label><input type="text" name="apellido" value="{{ tripulante.info.5}} {{ tripulante.info.6 }}">
+        <label for="grado">Grado</label><input type="text" name="grado" id="grado" value="{{ tripulante.info.1 }}">
+        <label for="genero">Genero</label><input type="text" name="genero" value="{{ tripulante.info.7 }}">
+        <label for="seccion">Seccion - Peloton</label><input type="text" name="seccion" value="{{ tripulante.info.11 }}">
+        <label for="fecha_nacimiento">El dia</label><input type="date" name="fecha_nacimiento" value="{{ tripulante.info.8 }}" id="fecha_nacimiento">
+        <label for="fecha_ingreso">Fecha de ingreso</label><input type="date" name="fecha_ingreso" value="{{ tripulante.info.13 }}" id="fecha_ingreso" >
+        <label for="credencial_numero">Numero</label><input type="text" name="credencial_numero" value="{{ tripulante.info.15 }}">
+        <label for="antiguedad">Antiguedad Armada</label><input type="text" name="antiguedad" id="antiguedadArmada" style="text-transform: none;">
+        <label for="antiguedadDocente">Antiguedad Docente</label><input type="text" name="antiguedadDocente" id="antiguedadDocente" value="{{ tripulante.info.17 }}">
+    </div>
+    <a href="editInfoPersonal">Editar</a>
+</form>
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static', filename='js/infoPersonal.js') }}"></script>
+{% endblock %} 

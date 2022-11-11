@@ -1,0 +1,32 @@
+{% extends 'editar.html' %} {% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/listadoMateriasPostula.css') }}"> {% endblock %} {% block contenido %}
+<div class="table">
+    <table>
+        <thead>
+            <tr class="sticky">
+                <th></th>
+                <th>Materias</th>
+                <th>Antiguedad</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            {% if tripulante.materias %}
+                {% for datos in tripulante.materias %}
+                        <tr>
+                            <td>{{ datos.0 }}</td>
+                            <td>{{ datos.1 }}</td>
+                            <td></td>
+                        </tr>
+                {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="3" style="text-align: center;">No hay datos que mostar</td>
+            </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static', filename='js/antiguedad.js') }}"></script>
+{% endblock %}

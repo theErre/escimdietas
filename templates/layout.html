@@ -1,0 +1,39 @@
+{% if session.legajo %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> {% block css %} {% endblock %}
+    <title>Comando de Infanteria de Marina</title>
+</head>
+
+<body>
+    <div class="contenedor">
+        <header class="header">
+            <div class="info">{{ session.nombre }} {{ session.apellido }}</div>
+            <div class="salir"><a href="/salir">Salir</a></div>
+            <div class="salir"><a href="">Mensajes</a></div>
+        </header>
+        <aside class="sidebar">
+            <a href="/list" id="listado">Todos los Tripulantes</a>
+            <a href="/listadosGenerales" id="listadosGenerales">Listados Generales</a>
+            <a href="/cantidadDeVoluntariosTotales">Imprimir Totales</a>
+            <a href="/puntajeDeVoluntarios" id="puntajeDeVoluntarios">Puntajes Totales</a>
+            <a href="/anexo1">Anexo 1</a>
+            <a href="/resultadoConcurso">Resultado de Concurso</a>
+            <a href="/nombramiento">Nombramiento</a>
+            <a href="/categoriaAntiguedad">Categoria de antiguedad</a>
+            <a href="/new" id="agregar">Agregar Nuevo</a>
+        </aside>
+        <main class="contenido">
+            {% block contenido %} {% endblock %}
+        </main>
+        <div class="footer">Created: 2022</div>
+    </div>
+    {% block js %} {% endblock %}
+</body>
+</html>
+{% endif %}

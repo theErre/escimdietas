@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    background: #e9ecf4;
+    color: #000;
+    font-family: sans-serif;
+}
+
+.contenedor {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "header header header header" 
+                        "sidebar contenido contenido contenido" 
+                        "sidebar contenido contenido contenido" 
+                        "footer footer footer footer";
+}
+
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .footer {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.contenedor .header {
+    background: #12193e;
+    color: #fff;
+    grid-area: header;
+}
+
+.contenedor .header .info {
+    color: #fff;
+    display: inline;
+}
+
+.contenedor .header .salir {
+    float: right;
+}
+
+.contenedor .header .salir a {
+    color: #fff;
+    border-radius: 5px;
+    padding: 7px 10px;
+    margin: 0 8px;
+    background: #223075;
+    text-decoration: none;
+}
+
+.contenedor .header .salir a:last-child{
+    margin-right: 0;
+}
+
+.contenedor .header .salir a:hover {
+    background: #35448f;
+}
+
+.contenedor .encabezado .informacion {
+    border: 10px solid #000;
+    grid-area: informacion;
+}
+
+.contenedor .contenido {
+    grid-area: contenido;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+}
+
+.contenedor .sidebar {
+    background: #223075;
+    min-width: 200px;
+    min-height: 100px;
+    grid-area: sidebar;
+}
+
+.contenedor .sidebar a {  
+    padding: 10px;
+    border-radius: 3px;
+    background: #35448f;
+    display: block;
+    width: 100% - 20px;
+    margin: 0 0 10px 0;
+    color: #fff;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.contenedor .sidebar a:last-child{
+    margin: 0;
+}
+
+.contenedor.sidebar a:first-child{
+    margin: 0;
+}
+
+.contenedor .sidebar a:hover {
+    background: #12203e
+}
+
+.contenedor .footer {
+    background: #12203e;
+    color: #fff;
+    grid-area: footer
+}
+

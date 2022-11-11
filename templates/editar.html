@@ -1,0 +1,54 @@
+{% if session.legajo %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/edit.css') }}"> 
+    {% block css %} {% endblock %}
+    <title>Comando de Infanteria de Marina</title>
+</head>
+<body>
+    <div class="contenedor">
+        <header class="header">
+            <div class="info">{{ session.nombre }} {{ session.apellido }}</div>
+            <div class="salir"><a href="/salir">Salir</a></div>
+            <div class="salir"><a href="">Mensajes</a></div>
+        </header>
+        <aside class="sidebar">
+            <div class="foto_perfil" id="foto_perfil">
+                {% if tripulante.info.9 == "" %}      
+                <img src="/static/img/perfil_hombre.png">
+                {% else %}
+                <a target="_blank" id="img" href="/static/img/imgDigitalizadas/{{ tripulante.info.0 }}/{{ tripulante.info.9 }}">
+                    <img src="/static/img/imgDigitalizadas/{{ tripulante.info.0 }}/{{ tripulante.info.9 }}" href="/static/img/imgDigitalizadas/{{ tripulante.info.0 }}/{{ tripulante.info.9 }}">
+                </a>   
+                {% endif %}
+            </div>
+            <a href="/perfil/{{ tripulante.info.0 }}/load_perfil" id="cambiarFoto">Cambiar Foto</a>
+            <a href="/perfil/{{ tripulante.info.0 }}/infoPersonal" id="infoPersonal">Informacion Personal</a>
+            <a href="/perfil/{{ tripulante.info.0 }}/otrosDatos" id="otrosDatos">Otros Datos de Interes</a>
+            <a href="/perfil/{{ tripulante.info.0 }}/listadoCursosPostula" id="cursosPostula">Cursos a los que se postula</a>
+            <a href="/perfil/{{ tripulante.info.0 }}/infoCursos" id="infoCursos">Cursos Realizados</a>
+            <a href="/perfil/{{ tripulante.info.0 }}/imprimir">imprimir Curriculum</a>
+            <a href="/perfil/{{ tripulante.info.0 }}/imprimir_materias">Imprimir Materias a las que se postula</a>
+            <a href="/perfil/{{ tripulante.info.0 }}/deleted" id="eliminarPerfil" class="confirmation">Eliminar Perfil</a>
+        </aside>
+        <main class="contenido">
+            <div class="perfil" id="header_perfil">
+                <label>{{ tripulante.info.1 }} ({{ tripulante.info.2 }}) {{ tripulante.info.3 }} {{ tripulante.info.5 }}</label>
+                <div class="boton"><a href="/list" id="back">Volver</a></div>
+            </div>
+            <div class="info">
+                {% block contenido %}  
+                {% endblock %}
+            </div>
+        </main>
+        <div class="footer">Created: 2022</div>
+    </div>
+    <script src="{{ url_for('static', filename='js/edit.js') }}"></script>
+    {% block js %} {% endblock %}
+</body>
+</html>
+{% endif %}

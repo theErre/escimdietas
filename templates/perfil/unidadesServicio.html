@@ -1,0 +1,33 @@
+{% extends 'editar.html' %} {% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/infoCursos.css') }}"> {% endblock %} {% block contenido %}
+<div class="table">
+    <table>
+        <thead>
+            <tr class="sticky">
+                <th>Desde</th>
+                <th>Hasta</th>
+                <th>Uniadad / Seccion</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            {% if tripulante.unidad %}
+                {% for datos in tripulante.unidad %}
+                <tr onclick="window.location.href='/perfil/{{ datos.0 }}/infoPersonal'">
+                    <td>{{ datos.2 }}</td>
+                    <td>{{ datos.3 }}</td>
+                    <td>{{ datos.4 }}</td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="3">No hay datos que mostar</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+<a href="/perfil/{{ tripulante.info.0 }}/nuevoUnidadesServicio">Agregar</a>
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static', filename='js/unidadesServicio.js') }}"></script>
+{% endblock %}

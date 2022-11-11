@@ -1,0 +1,2066 @@
+{% extends 'editar.html' %} {% block css%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/materias.css') }}"> {% endblock %} {% block contenido %}
+<input type="search"  id="myInput" onkeyup="myFunction_materias()" placeholder="Buscar por nombre de curso..">
+<form action="cursosPostula/config" method="post">
+    <textarea name="listado" id="listado"></textarea>
+    <div class="table">
+        <table>
+            <thead>
+                <tr class="sticky">
+                    <th></th>
+                    <th>Nombre de los Cursos</th>
+                    <th>Horas</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                <tr>
+                    <th></th>
+                    <th>CO-51 "Curso Oficial infante de Marina"</th>
+                    <th>830 Hs</th>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="1.1" name="materias"></td>
+                    <td>Acondicionamiento Fisico</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="1.2" name="materias"></td>
+                    <td>Organizacion</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="1.3" name="materias"></td>
+                    <td>Margo Legal</td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="1.4" name="materias"></td>
+                    <td>Defensa Personal</td>
+                    <td>76</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="1.5" name="materias"></td>
+                    <td>Guardia y consignas</td>
+                    <td>72</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="1.6" name="materias"></td>
+                    <td>Primeros auxilios</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="1.7" name="materias"></td>
+                    <td>Control de Disturbios Civiles</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="1.8" name="materias"></td>
+                    <td>Tactias de Infanteria</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="1.9" name="materias"></td>
+                    <td>Cartografia</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="1.10" name="materias"></td>
+                    <td>Armamento</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="1.11" name="materias"></td>
+                    <td>Adiestramiento complementario</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="1.12" name="materias"></td>
+                    <td>Patrullaje</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="1.13" name="materias"></td>
+                    <td>Operaciones fluviales y anfibias</td>
+                    <td>48</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="1.14" name="materias"></td>
+                    <td>Operaciones Militares en Terreno Urbano (OMTU)</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="1.15" name="materias"></td>
+                    <td>Operaciones convencionales</td>
+                    <td>56</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="1.16" name="materias"></td>
+                    <td>Procedimientos policiales especiales</td>
+                    <td>26</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" value="1.17" name="materias"></td>
+                    <td>Maniobra Final</td>
+                    <td>48</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CO-52 "Curso para Oficiales Comandante de Compañia"</th>
+                    <th>700 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" value="2.1" name="materias"></td>
+                    <td>Comando y control</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="2.2"></td>
+                    <td>Inteligencia y contra inteligencia</td>
+                    <td>44</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="2.3"></td>
+                    <td>Logistica</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="2.4"></td>
+                    <td>Operaciones anfibias</td>
+                    <td>108</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="2.5"></td>
+                    <td>Operaciones Ofensivas</td>
+                    <td>88</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="2.6"></td>
+                    <td>Operaciones de Cruce de Rios</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="2.7"></td>
+                    <td>Infiltracion</td>
+                    <td>12</td>
+                </tr><tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="2.8"></td>
+                    <td>Operaciones Helitransoportadas</td>
+                    <td>44</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="2.9"></td>
+                    <td>Operaciones Defensivas</td>
+                    <td>88</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="2.10"></td>
+                    <td>Patrullaje</td>
+                    <td>108</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="2.11"></td>
+                    <td>Disturbios Civiles y Control de la Poblacion</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="2.12"></td>
+                    <td>Operaciones Auxiliares</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="2.13"></td>
+                    <td>Operaciones Fluviales</td>
+                    <td>44</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="2.14"></td>
+                    <td>Operaciones Militares en Terreno Urbano (OMTU)</td>
+                    <td>48</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CC-61 "Curso de Comunicaciones Tacticas de Infanteria"</th>
+                    <th>100 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="3.1"></td>
+                    <td>Disiplina y seguridad en las comunicaciones</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="3.2"></td>
+                    <td>Composicion de Mensajes</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="3.3"></td>
+                    <td>Composicion, porte y uso de equipo PRC 4620</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="3.4"></td>
+                    <td>Composicion y uso de equipo SINTOR X 9000</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="3.5"></td>
+                    <td>Equipos de comunicaciones MICON 1 HF</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="3.6"></td>
+                    <td>Uso de tablillas de claves</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="3.7"></td>
+                    <td>Palabras Claves</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="3.8"></td>
+                    <td>Escalones de mantenimiento</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CC-62 "Curso de tiro rapido de autodefensa"</th>
+                    <th>72 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="4.1"></td>
+                    <td>Introduccion (balistica del arma destinada)</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="4.2"></td>
+                    <td>Formas de trasportar el arma</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="4.3"></td>
+                    <td>Metodologia de empuñamiento</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="4.4"></td>
+                    <td>Tecnicas y posiciones de tiro rapido de autodefensa</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="4.5"></td>
+                    <td>Tiro en poligonos</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CC-63 "Curso para Granadero Clasico"</th>
+                    <th>92 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="5.1"></td>
+                    <td>Granada de Mano</td>
+                    <td>64</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="5.2"></td>
+                    <td>Armas de Campaña</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CC-64 "Curso para Instructor de Tiro</th>
+                    <th>132 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="6.1"></td>
+                    <td>Normas de Seguridad en el uso de Armas</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="6.2"></td>
+                    <td>Instruccion con Armas Largas</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="6.3"></td>
+                    <td>Instruccion con Armas Cortas</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CC-65A "Curso de Pistola Glock 9mm"</th>
+                    <th>60 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="7.1"></td>
+                    <td>Caracteristicas y Datos Generales</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="7.2"></td>
+                    <td>Desarme y Arme de Pistola</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="7.3"></td>
+                    <td>Precauciones de seguridad y fallas de fuego</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="7.4"></td>
+                    <td>Punteria y Posiciones de tiro</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="7.5"></td>
+                    <td>Tiro en Poligonos</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CC-65B "Curso Basico de Pistola Glock 17"</th>
+                    <th>12 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="8.1"></td>
+                    <td>Caracteristicas y datos Generales</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="8.2"></td>
+                    <td>Desarme y arme de campaña de la pistola</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="8.3"></td>
+                    <td>Precauciones de seguridad y fallas de fuego</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="8.4"></td>
+                    <td>Precauciones de seguridad en el poligono</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="8.5"></td>
+                    <td>Posiciones de Tiro</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="8.6"></td>
+                    <td>Tiro en Poligono</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CC-66 "Curso de Fusil de Asalto G36E"</th>
+                    <th>44 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="9.1"></td>
+                    <td>Caracteristicas del Fusil G36E</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="9.2"></td>
+                    <td>Nomeclatura, Desarme y arme de fusil G36E</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="9.3"></td>
+                    <td>Funcionamiento General del arma</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="9.4"></td>
+                    <td>Aparato de punteria, alimentacion, carga y descarga</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="9.5"></td>
+                    <td>Fallas de fuego y fromas de subsanarlas</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="9.6"></td>
+                    <td>mantenimiento, Limpieza y conservacion</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="9.7"></td>
+                    <td>Capacidad</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="9.8"></td>
+                    <td>Posciones de tiro en el poligono</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="9.9"></td>
+                    <td>Clases de Fuego</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CC-67 "Curso de Administracion Personal"</th>
+                    <th>32 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="10.1"></td>
+                    <td>Reglamentos de directivas administrativas y comunicaciones de la armada nacional</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="10.2"></td>
+                    <td>Lista de formularios de personal y material usado en la infanteria de marina</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CC-68 "Curso de Cartografia"</th>
+                    <th>404 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="11.1"></td>
+                    <td>Generalidades sobre la cartografia</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="11.2"></td>
+                    <td>Metodos improbisados de orientacion</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="11.3"></td>
+                    <td>Informacion marginal, escala y colores</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="11.4"></td>
+                    <td>Actualizacion de una carta topografica</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="11.5"></td>
+                    <td>Lectura de una carta topografica</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="11.6"></td>
+                    <td>Acimut de cuadricula y compas de campaña</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="11.7"></td>
+                    <td>Confecciones de perfiles</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="11.8"></td>
+                    <td>Sistema de poscionamiento GLOBAL (GPS)</td>
+                    <td>68</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="11.9"></td>
+                    <td>Mesa de arena</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="11.10"></td>
+                    <td>Lectura de cartas nauticas</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="11.11"></td>
+                    <td>Hidrografia</td>
+                    <td>208</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="11.12"></td>
+                    <td>Fotografia aerea y satelites</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CC-72 "Curso de Fusil Ametrallador (L.M.G)</th>
+                    <th>44 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="12.1"></td>
+                    <td>Caracteristicas del fusil L.M.G</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="12.2"></td>
+                    <td>Nomeclatura, desarme y arme fusil L.M.G</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="12.3"></td>
+                    <td>Funcionamiento general del arma</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="12.4"></td>
+                    <td>Aparato de punteria, alimentacion, carga y descarga</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="12.5"></td>
+                    <td>Fallas de fuego y formas de subsanarlas</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="12.6"></td>
+                    <td>Mantenimiento, Limpieza y conservacion</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="12.7"></td>
+                    <td>Capacidad</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="12.8"></td>
+                    <td>Posciones de tiro en el poligono</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="12.9"></td>
+                    <td>Clases de Fuego</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-21 "Monitor de Educacion Fisica"</th>
+                    <th>60 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="13.1"></td>
+                    <td>Principios Basicos de la Educacion Fisica</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="13.2"></td>
+                    <td>Historia y actualidad</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="13.3"></td>
+                    <td>Anatomia</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="13.4"></td>
+                    <td>Fisiologia</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="13.5"></td>
+                    <td>Entrenamiento fisico</td>
+                    <td>17</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="13.6"></td>
+                    <td>Nutricion</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="13.7"></td>
+                    <td>Lesiones deportivas</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-71 "Curso de reparacion de armas portatiles y de dotacion"</th>
+                    <th>168 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="14.1"></td>
+                    <td>Sistema de mantenimiento</td>
+                    <td>56</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="14.2"></td>
+                    <td>Armas portatiles</td>
+                    <td>56</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="14.3"></td>
+                    <td>Armas de dotacion</td>
+                    <td>56</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-72 "Curso de operaciones especiales anfibias"</th>
+                    <th>1837 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="15.1"></td>
+                    <td>Acondicionamiento Fisico</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="15.2"></td>
+                    <td>Natacion II</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="15.3"></td>
+                    <td>Defensa personal Operativas</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="15.4"></td>
+                    <td>Primeros auxilios II</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="15.5"></td>
+                    <td>Metodos de inserccion y extraccion II</td>
+                    <td>270</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="15.6"></td>
+                    <td>Armamento II</td>
+                    <td>150</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="15.7"></td>
+                    <td>Navegacion terrestre y nautica II</td>
+                    <td>162</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="15.8"></td>
+                    <td>Combate a cuarto cerrado II</td>
+                    <td>102</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="15.9"></td>
+                    <td>Operaciones especiales Policiales II</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="15.10"></td>
+                    <td>Operaciones Especiales Militares II</td>
+                    <td>210</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="15.11"></td>
+                    <td>Demoliciones de combate</td>
+                    <td>70</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="15.12"></td>
+                    <td>Patrullaje</td>
+                    <td>250</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="15.13"></td>
+                    <td>REconocimiento avanzado</td>
+                    <td>155</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="15.14"></td>
+                    <td>Supervivencia, evacion, resistencia y escape</td>
+                    <td>108</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="15.15"></td>
+                    <td>Comunicaciones</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-73 A "Ametralladora de apoyo general 7.62mm (M.A.G.)"</th>
+                    <th>108 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="16.1"></td>
+                    <td>Intruccion mecanica del arma</td>
+                    <td>44</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="16.2"></td>
+                    <td>Intruccion de dotacion y tiro</td>
+                    <td>64</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-73 B "Ametralladora Browning 12.7mm (.50 FN-USB)"</th>
+                    <th>172 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="17.1"></td>
+                    <td>Instruccion mecanica del arma/td>
+                    <td>76</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="17.2"></td>
+                    <td>Instruccion de tecnicas y tacticas del arma/td>
+                    <td>96</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-75 "Curso de fusil ametrallador"</th>
+                    <th>68 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="18.1"></td>
+                    <td>Caracteristicas generales</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="18.2"></td>
+                    <td>mecanica del amra (F.A.P.)</td>
+                    <td>34</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="18.3"></td>
+                    <td>Tiro</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-76 "Explosivos y Demoliciones"</th>
+                    <th>184 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="19.1"></td>
+                    <td>Seguridad en el manejo de Explosivos</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="19.2"></td>
+                    <td>Explosivos militares</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="19.3"></td>
+                    <td>Sistema de disparo</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="19.4"></td>
+                    <td>Sebado de cargas</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="19.5"></td>
+                    <td>Calculo de colocacion de cargas</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="19.6"></td>
+                    <td>tipo de cargas</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="19.7"></td>
+                    <td>Detencion de minas, desarme y arme de trampas explosivas</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="19.8"></td>
+                    <td>Explisivos caseros</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-78 "Curso para choferes de vehiculos tacticos"</th>
+                    <th>204 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="20.1"></td>
+                    <td>Conocimiento general de las normas de transito</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="20.2"></td>
+                    <td>Conocimiento del vehiculo</td>
+                    <td>34</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="20.3"></td>
+                    <td>Funcionamiento del vehiculo</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="20.4"></td>
+                    <td>Teorico y practico vehicular</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-79 "Curso para Camillero de Combate"</th>
+                    <th>160 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="21.1"></td>
+                    <td>Marco de la refernacia para la asistencia primaria en combate</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="21.2"></td>
+                    <td>Conceptos y fundamentos de la asistencia primaria en combate</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="21.3"></td>
+                    <td>Tramiento de la via aerea y sistema cardiovascular</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="21.4"></td>
+                    <td>Hemorragias y heridas</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="21.5"></td>
+                    <td>Quemadura, vendajes y shock</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="21.6"></td>
+                    <td>Fracturas y lesiones asociadas</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="21.7"></td>
+                    <td>Descompensaciones subitas, accidentes por frio y calor</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="21.8"></td>
+                    <td>Intoxicacion</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="21.9"></td>
+                    <td>Animales ponzoñosos</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="21.10"></td>
+                    <td>Diabetes; epliepsia y ave</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="21.11"></td>
+                    <td>VIH y sida</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="21.12"></td>
+                    <td>Botiquin de asistencia primaria</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="21.13"></td>
+                    <td>Transporte y traslado de victimas</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="21.14"></td>
+                    <td>Asistencia primaria psicologica</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="21.15"></td>
+                    <td>Introduccion a la emergencia de combate</td>
+                    <td>64</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-81 "Curso de Tirador Explorador"</th>
+                    <th>270 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="22.1"></td>
+                    <td>Conceptos basicos, uso del arma y apartatos opticos</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="22.2"></td>
+                    <td>Tiro, reguleracion de fusil y acechos</td>
+                    <td>70</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="22.3"></td>
+                    <td>Reguladores a media y largas distancias, blanco de oportunidades y en movimiento</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="22.4"></td>
+                    <td>Ubicacion y movimientos en terreno, planificacion de una operacion</td>
+                    <td>44</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="22.5"></td>
+                    <td>Finalizacion de curso</td>
+                    <td>96</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-83 "Curso Monitor de Combate Cuerpo a Cuerpo</th>
+                    <th>212 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="23.1"></td>
+                    <td>Fundamento del combate cuerpo a cuerpo</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="23.2"></td>
+                    <td>Combate con Cuchillo</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="23.3"></td>
+                    <td>Golpes</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="23.4"></td>
+                    <td>Proyeciones</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="23.5"></td>
+                    <td>Agarras y estrangulaciones</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="23.6"></td>
+                    <td>Combate en el Suelo</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="23.7"></td>
+                    <td>Armas de mano</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="23.8"></td>
+                    <td>Entrenamiento con palo de combate</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="23.9"></td>
+                    <td>Combate cuerpo a cuerpo, defensa personal, el fusil y la bayoneta</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-84A "Modulo de Mortero 60mm</th>
+                    <th>112 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="24.1"></td>
+                    <td>Intruccion mecanica</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="24.2"></td>
+                    <td>Instruccion de dotacion y tiro</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="24.3"></td>
+                    <td>Observacion avanzada y C.D.T.</td>
+                    <td>56</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>cf-84B "Modulo de Mortero 81mm</th>
+                    <th>80 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="25.1"></td>
+                    <td>Adiestramiento mecanico</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="25.2"></td>
+                    <td>Instruccion, dotacion y tiro</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="25.3"></td>
+                    <td>Observador adelantado</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-85A "Curso de Mando para Comandantes de Pequeñas Unidades de Infanteria Nvil Clases"</th>
+                    <th>480 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="26.1"></td>
+                    <td>Conocimientos generales</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="26.2"></td>
+                    <td>Conocimientos Militares</td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="26.3"></td>
+                    <td>Arte de Mando</td>
+                    <td>80
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="26.4"></td>
+                    <td>Conocimientos Profesionales</td>
+                    <td>280</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-86 "Curso de Mando para Comandantes de Pequeñas Unidades de Infanteria Nivel SSOO"</th>
+                    <th>480 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="27.1"></td>
+                    <td>Conocimientos generales</td>
+                    <td>68</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="27.2"></td>
+                    <td>Conocimientos militares</td>
+                    <td>92</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="27.3"></td>
+                    <td>Arte de mano</td>
+                    <td>108</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="27.4"></td>
+                    <td>Conocimientos Profesionales</td>
+                    <td>212</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-87 "Escopeta Tactica Calibre 12"</th>
+                    <th>56 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="28.1"></td>
+                    <td>Instruccion mecanica y datos generales</td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="28.2"></td>
+                    <td>Punteria y tiro</td>
+                    <td>21</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-88 "Empleo de Equipamiento de Vision Noctruna y Telemetria </th>
+                    <th>80 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="29.1"></td>
+                    <td>Equipos de vision nocturna</td>
+                    <td>56</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="29.2"></td>
+                    <td>Equipos de telemetria</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-89 "Operaciones Militares en Terreno Urbano (O.M.T.U)</th>
+                    <th>244 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="30.1"></td>
+                    <td>Introduccion a areas urbanas</td>
+                    <td>17</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="30.2"></td>
+                    <td>Patrullla urbana</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="30.3"></td>
+                    <td>Movimiento</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="30.4"></td>
+                    <td>Asalto</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="30.5"></td>
+                    <td>Entrada por la fuerza</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="30.6"></td>
+                    <td>Francotirador</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="30.7"></td>
+                    <td>Patrulla subterranea</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="30.8"></td>
+                    <td>Limpieza</td>
+                    <td>17</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="30.9"></td>
+                    <td>Hacer Firme</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="30.10"></td>
+                    <td>Consideraciones nocturnas</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="30.11"></td>
+                    <td>Tranques</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="30.12"></td>
+                    <td>Inspercciones de Cloacas</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="30.13"></td>
+                    <td>Tecnicas especiales</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-96D "Empleo Tactico de Los Botes Neumaticos</th>
+                    <th>112 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="31.1"></td>
+                    <td>Conocimientos generales</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="31.2"></td>
+                    <td>Formaciones</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="31.3"></td>
+                    <td>Maniobras</td>
+                    <td>22</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="31.4"></td>
+                    <td>Navegacion</td>
+                    <td>36</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="31.5"></td>
+                    <td>Empleo de embaraciones neumaticas en las operaciones</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="31.6"></td>
+                    <td>Procedimientos de abrodaje y requisa</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-100 "Curso de Operaciones de Interdiccion Maritima</th>
+                    <th>392 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="32.1"></td>
+                    <td>Armamenento</td>
+                    <td>36</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="32.2"></td>
+                    <td>Defensa personal</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="32.3"></td>
+                    <td>Primeros auxilios</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="32.4"></td>
+                    <td>Derecho nacional e internacional</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="32.5"></td>
+                    <td>Uso de la fuerza</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="32.6"></td>
+                    <td>Planeamiento de abordajes no cooperativos</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="32.7"></td>
+                    <td>procedimientos de abordajes</td>
+                    <td>84</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="32.8"></td>
+                    <td>procedimientos tacticos</td>
+                    <td>68</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-176 "Curso de Control de Multitudes para PRENA"</th>
+                    <th>80 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="33.1"></td>
+                    <td>Control de disturbios civiles</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="33.2"></td>
+                    <td>Escuadra de control de disturbios civiles</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="33.3"></td>
+                    <td>Agentes quimicos</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="33.4"></td>
+                    <td>Armas utilizadas en disturbios</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="33.5"></td>
+                    <td>Protecciones</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-177 "Curso de Control de Disturbios Civiles</th>
+                    <th>120 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="34.1"></td>
+                    <td>Marco juridico</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="34.2"></td>
+                    <td>Control de disturbios civiles</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="34.3"></td>
+                    <td>Organizacion de control de disturbios civiles</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="34.4"></td>
+                    <td>Agentes quimicos</td>
+                    <td>36</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="34.5"></td>
+                    <td>Armas utilizadas en disturbios</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="34.6"></td>
+                    <td>Proteccciones</td>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-178 "Curso de Intervencion Fluvial para PRENA"</th>
+                    <th>80 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="35.1"></td>
+                    <td>Tecnicas de Abordaje</td>
+                    <td>17</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="35.2"></td>
+                    <td>Tecnicas de riesgo de embarcaciones</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="35.3"></td>
+                    <td>Navegacion de botes neumaticos</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="35.4"></td>
+                    <td>Tecnicas de patrullaje rural</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-179A "Modulo de Operaciones Policiales Especiales"</th>
+                    <th>120 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="36.1"></td>
+                    <td>Tecnicas y tacticas polciales basicas</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="36.2"></td>
+                    <td>Tecnicas y tacticas policiales especiales</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-179B "Modulo Tecnitcas y Tacticas de Desplazamiento"</th>
+                    <th>120 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="37.1"></td>
+                    <td>Tecnicas y tacticas en operaciones rurales</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="37.2"></td>
+                    <td>Tecnicas y tacticas en operaciones fluviamaritimas</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-179 C "Modulo Tecnicas de Insercion"</th>
+                    <th>60 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="38.1"></td>
+                    <td>Tecnica y tactica de insercion</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-179 D "Modulo Primeros Auxilios, Amras y Tiro"</th>
+                    <th>80 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="39.1"></td>
+                    <td>Primeros Auxilios</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="39.2"></td>
+                    <td>Armas y tiro</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-184 "Curso de Uso de Tonfa</th>
+                    <th>40 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="40.1"></td>
+                    <td>Tecnicas de uso del baston tonfa</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="40.2"></td>
+                    <td>Registro</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-186 "Curso de Tecnicas de Policia Maritima"</th>
+                    <th>80 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="41.1"></td>
+                    <td>Tecnicas de detencion y registro de vehiculos</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="41.2"></td>
+                    <td>Tecnicas de detencion y registro de persona</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="41.3"></td>
+                    <td>Tecnicas de defensa y conduccion con baston policial y tonfa </td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="41.4"></td>
+                    <td>Uso de las armas por la P.N.N</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-222 "Curso Basico de Fuerzas Especiales </th>
+                    <th>535 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="42.1"></td>
+                    <td>Acondicionamiento fisico</td>
+                    <td>56</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="42.2"></td>
+                    <td>Natacion I</td>
+                    <td>84</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="42.3"></td>
+                    <td>Defensa personal operativa I</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="42.4"></td>
+                    <td>Primeros Auxilios I</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="42.5"></td>
+                    <td>Metodos de Insercion y extraccion avanzado</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="42.6"></td>
+                    <td>Tecnicas de tiro avanzados para armamento basico de COFFEE</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="42.7"></td>
+                    <td>Navegacion terrestre y nautico I</td>
+                    <td>55</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="42.8"></td>
+                    <td>Combate a cuarto cerrado I</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="42.9"></td>
+                    <td>Operaciones especiales polciales I</td>
+                    <td>55</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="42.10"></td>
+                    <td>Operaciones especiales militares I</td>
+                    <td>55</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CF-223 "Operaciones de Lanchas Rapidas"</th>
+                    <th>415 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="43.1"></td>
+                    <td>Familiarizacion con la lancha de patrulla</td>
+                    <td>105</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="43.2"></td>
+                    <td>El dispositivos de vision nocturna</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="43.3"></td>
+                    <td>Navegacion a bordo de lanchas patrulleras fluviales</td>
+                    <td>105</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="43.4"></td>
+                    <td>Operaciones Fluviales</td>
+                    <td>115</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CP-01 "Curso Basico Naval Militar"</th>
+                    <th>388 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="44.1"></td>
+                    <td>Acondicionamiento fisico</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="44.2"></td>
+                    <td>Armas portatiles</td>
+                    <td>48</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="44.3"></td>
+                    <td>Codigo y reglamentos</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="44.4"></td>
+                    <td>Marineria</td>
+                    <td>72</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="44.5"></td>
+                    <td>Control de averias y lucha contra incendios</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="44.6"></td>
+                    <td>Informacion general</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="44.7"></td>
+                    <td>Primeros auxilios</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="44.8"></td>
+                    <td>Supervivencia en el mar</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="44.9"></td>
+                    <td>Instruccion de infanteria y movimientos sin arma</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="44.10"></td>
+                    <td>Instruccion de infanteria con armas fusil FAL</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="44.11"></td>
+                    <td>Seguridad de la informacion clasificada</td>
+                    <td>44</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CP-34 H "Curso de Perfeccionamiento para ascenso a SOS, Modulo Tecnico Profesional Especialidad "FUSILERO"</th>
+                    <th>220 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="45.1"></td>
+                    <td>Armas portatiles pistola glock17 9mm</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="45.2"></td>
+                    <td>Hoja de trabajo de inteligencia</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="45.3"></td>
+                    <td>Cartografia</td>
+                    <td>56</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="45.4"></td>
+                    <td>Logistica</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="45.5"></td>
+                    <td>Confeccion y mantenimieno de partes de la unidad</td>
+                    <td>56</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CP-40 H "Curso de Perfeccionamiento para ascenso a CS, Modulo Tecnico Profesional Especialidad "FUSILERO"</th>
+                    <th>220 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="46.1"></td>
+                    <td>Ametralladora y tecnicas de tiro</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="46.2"></td>
+                    <td>tactica</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="46.3"></td>
+                    <td>Disturbios civiles</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="46.4"></td>
+                    <td>Cartografia</td>
+                    <td>48</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="46.5"></td>
+                    <td>Operaciones fluviales</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="46.6"></td>
+                    <td>Operaciones Helitransoportadas</td>
+                    <td>26</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="46.7"></td>
+                    <td>Patrullaje</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CP-53 "Curso Basico de Infante de Marina"</th>
+                    <th>660 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="47.1"></td>
+                    <td>Acondicionamiento fisico</td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="47.2"></td>
+                    <td>Tiro y armamento (HK.G36, Glock17, MP5 y M.A.G)</td>
+                    <td>45</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="47.3"></td>
+                    <td>Tecnicas de detencion y registro de vehiculos y personas</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="47.4"></td>
+                    <td>Tecnicas de uso del baston tonfa o PR-24</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="47.5"></td>
+                    <td>Procedimientos policiales especiales</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="47.6"></td>
+                    <td>Comunicaciones</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="47.7"></td>
+                    <td>Patrullaje</td>
+                    <td>45</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="47.8"></td>
+                    <td>Operaciones fluviales y anfibias</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="47.9"></td>
+                    <td>Control de disturbios civiles</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="47.10"></td>
+                    <td>Instruccion de infanteria (FAL)</td>
+                    <td>48</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="47.11"></td>
+                    <td>Marco legal (CP-06)</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="47.12"></td>
+                    <td>Defensa personal</td>
+                    <td>22</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="47.13"></td>
+                    <td>Tacticas de infanteria</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="47.14"></td>
+                    <td>Cartografia</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="47.15"></td>
+                    <td>Adiestramiento complementario</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="47.16"></td>
+                    <td>OMTU</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="47.17"></td>
+                    <td>Maniobra Final</td>
+                    <td>72</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CP-58A "Curso Conductor de Canes"</th>
+                    <th>216 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="48.1"></td>
+                    <td>El ovejero aleman y su pedrigee</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="48.2"></td>
+                    <td>La perra y sus crias</td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="48.3"></td>
+                    <td>Alimentacion y cuidado de canes </td>
+                    <td>37</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="48.4"></td>
+                    <td>Anatomia y patologia canina</td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="48.5"></td>
+                    <td>Establecimiento canino de alojamiento, crias y adietramiento en canes en combate</td>
+                    <td>37</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="48.6"></td>
+                    <td>Conduccion</td>
+                    <td>42</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CP-58B "Modulo Conductor de Canes Detectores de Sustancias Prohibidas"</th>
+                    <th>216 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="49.1"></td>
+                    <td>Conductor</td>
+                    <td>108</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="49.2"></td>
+                    <td>Sustancias prohibidas</td>
+                    <td>108</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CP-58 C "Modulo Canes Detectores de Explosivos"</th>
+                    <th>216 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="50.1"></td>
+                    <td>Principios de Acondicionamiento y modificaciones de comportamiento</td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="50.2"></td>
+                    <td>Tecnicas de aprendizaje</td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="50.3"></td>
+                    <td>Adiestramiento de los canes detectores</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="50.4"></td>
+                    <td>Tecnias de busqueda</td>
+                    <td>44</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="50.5"></td>
+                    <td>Seguridad en el manejo de explosivos y productos quimicos</td>
+                    <td>52</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CP-91 "Curso para Choferes de Vehiculos Livianos"</th>
+                    <th>108 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="51.1"></td>
+                    <td>Teorica de procedimientos para la conduccion de vehiculos</td>
+                    <td>54</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="51.2"></td>
+                    <td>Practica en la cuidad</td>
+                    <td>54</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CP-91 A "Curso para Cheferes de vehiculos Administrativos Pesados"</th>
+                    <th>108 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="52.1"></td>
+                    <td>Reconocimiento y funcionamiento del mecanismo del vehiculo pesado</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="52.2"></td>
+                    <td>Trabajos con instrumental</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="52.3"></td>
+                    <td>Practica en la cuidad</td>
+                    <td>48</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CP-93 "Curso de Escolta de Autoridades"</th>
+                    <th>268 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="53.1"></td>
+                    <td>Principios basicos de custodia</td>
+                    <td>72</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="53.2"></td>
+                    <td>Adistramiento en armas especiales</td>
+                    <td>56</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="53.3"></td>
+                    <td>combate cuerpo a cuerpo</td>
+                    <td>56</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="53.4"></td>
+                    <td>Tiro rapido de autodefensa</td>
+                    <td>56</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="53.5"></td>
+                    <td>Adistramiento fisico especifico</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CP-101 A "Modulo de Requerimientos Militares para Ascenso a Cabo de Primera"</th>
+                    <th>400 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="54.1"></td>
+                    <td>Inteligencia</td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="54.2"></td>
+                    <td>Informacion sobre la carrera</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="54.3"></td>
+                    <td>Organizacion a bordo y en tierra</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="54.4"></td>
+                    <td>Detall</td>
+                    <td>84</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="54.5"></td>
+                    <td>Adiestramiento</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="54.6"></td>
+                    <td>Adiestramiento y supervicion</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CP-101 H "Modulo Tecnico Profesional para el Ascenso a Cabo de Primera Clase Especialidad Fusilero"</th>
+                    <th>400 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="55.1"></td>
+                    <td>Acondicionamiento fisico</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="55.2"></td>
+                    <td>Mortero ECIA 60mm y demoliciones</td>
+                    <td>52</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="55.3"></td>
+                    <td>Disturbios civiles</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="55.4"></td>
+                    <td>Tactica</td>
+                    <td>120</td>
+                </tr>  <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="55.5"></td>
+                    <td>Administracion y logistica</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="55.6"></td>
+                    <td>Comunicaciones</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="55.7"></td>
+                    <td>Cartografia</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CP-102 A "Modulo de Requerimientos Militares para el Ascenso a Sub Oficial de Primera"</th>
+                    <th>400 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="56.1"></td>
+                    <td>Ceremonial</td>
+                    <td>36</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="56.2"></td>
+                    <td>Inteligencia</td>
+                    <td>52</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="56.3"></td>
+                    <td>Informacion sobre la carrera</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="56.4"></td>
+                    <td>Organizacion a bordo y en tierra</td>
+                    <td>64</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="56.5"></td>
+                    <td>Adiestramiento</td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="56.6"></td>
+                    <td>Administracion y supervicion</td>
+                    <td>152</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CP-102 H "Modulo Tecnico Profesional, Especialidad Fusilero para el Ascenso a Sub Oficial de Primera" </th>
+                    <th>400 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="57.1"></td>
+                    <td>Tiro</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="57.2"></td>
+                    <td>Tactica</td>
+                    <td>108</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="57.3"></td>
+                    <td>Contro de disturbios civiles</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="57.4"></td>
+                    <td>Deberes individuales</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="57.5"></td>
+                    <td>Fuego de apoyo</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="57.6"></td>
+                    <td>Operaciones anfibias, tipo secundario</td>
+                    <td>120</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="57.7"></td>
+                    <td>Operaciones Fluviales</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CP-103 A "Modulo de Requerimienos Militares para el Ascenso a Sub Oficial de Cargo"</th>
+                    <th>400 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="58.1"></td>
+                    <td>Codigos y reglamentos</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="58.2"></td>
+                    <td>Instruccion con armas largas</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="58.3"></td>
+                    <td>Informacion sobre la carrera</td>
+                    <td>48</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="58.4"></td>
+                    <td>Organizacion a bordo y en tierra</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="58.5"></td>
+                    <td>Adietramiento</td>
+                    <td>120</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="58.6"></td>
+                    <td>Administracion y supervicion</td>
+                    <td>140</td>
+                </tr>
+                <tr>
+                    <th class="fecha"></th>
+                    <th>CP-103 H "Modulo Tecnico Profesional, Especialidad Fusilero para el Ascenso a Sub Oficial de Cargo" </th>
+                    <th>400 Hs</th>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="59.1"></td>
+                    <td>Tactica, el combate ofensivo y defensivo nivel compañias</td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="59.2"></td>
+                    <td>Operaciones Anfibias</td>
+                    <td>160</td>
+                </tr>
+                <tr>
+                    <td class="fecha"><input type="checkbox" name="materias" value="59.3"></td>
+                    <td>Actividades complementarias</td>
+                    <td>160</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <input type="submit" value="Guardar" id="select">
+</form>
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static', filename='js/materias.js') }}"></script>
+{% endblock %}

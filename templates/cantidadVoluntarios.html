@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}{% block css%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/anexo1.css') }}"> 
+{% endblock %}{% block contenido %}
+<h2>Anexo 1</h2>
+<p>Ministerio de Defensa Nacional <br> Escuela de Infanteria de Marina </p>
+<div class="title">
+    <p>Área: {{ tripulantes.nombre }}</p>
+    <p>Materia: {{ tripulantes.materia }}</p>
+</div>
+<div class="table">
+    <table>
+        <thead>
+            <tr class="sticky">
+                <th>Ord</th>
+                <th>Cedula</th>
+                <th>Nombre</th>
+                <th>Grado</th>
+                <th>Caracter</th>
+                <th>curso/año</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            {% for datos in tripulantes.voluntarios %}
+            <tr>
+                <td class="contador"></td>
+                <td>{{ datos.4 }}</td>
+                <td>{{ datos.1 }}, {{ datos.2 }}</td>
+                <td>{{ datos.3 }}</td>
+                <td></td>
+                <td>1er año</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<button>Imprimir</button>
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static', filename='js/anexo1.js') }}"></script>
+{% endblock %}

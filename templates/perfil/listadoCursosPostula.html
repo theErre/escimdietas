@@ -1,0 +1,36 @@
+{% extends 'editar.html' %} {% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/listadoMateriasPostula.css') }}"> {% endblock %} {% block contenido %}
+<div class="table">
+    <table>
+        <thead>
+            <tr class="sticky">
+                <th style="display: none;">Numero</th>
+                <th>Materias</th>
+                <th>Horas</th>
+                <th>Calidad</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            {% if tripulante.materias.0 %}
+                {% for datos in tripulante.materias %}
+                        <tr>
+                            <td style="display: none;">{{ datos.0 }}</td>
+                            <td>{{ datos.1 }}</td>
+                            <td>{{ datos.2 }}</td>
+                            <td style="text-align: center;">{{ datos.3 }}</td>
+                        </tr>
+                {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="3" style="text-align: center;">No hay datos que mostar</td>
+            </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+<!-- <a href="/perfil/{{ tripulante.info.0}}/cursosPostula">Agregar</a> -->
+<h4 id="horasTotales">Cantidad de horas Totales: {{ tripulante.horas }}</h4>
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static', filename='js/list.js') }}"></script>
+{% endblock %}

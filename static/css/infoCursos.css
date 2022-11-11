@@ -1,0 +1,154 @@
+.contenedor .contenido .info {
+    grid-gap: info;
+}
+
+.contenedor .contenido .info #eliminar {
+    text-transform: capitalize;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 10px;
+    border: 1px solid rgb(255, 0, 0);
+    background: rgb(212, 48, 48);
+    color: #fff;
+    border-radius: 3px;
+}
+
+.contenedor .contenido .info p {
+    text-transform: capitalize;
+    text-align: center;
+    padding: 12px 20px;
+    border: 1px solid rgb(255, 0, 0);
+    background: rgb(212, 48, 48);
+    color: #fff;
+    border-radius: 5px;
+    margin: 8px 0;
+}
+
+.contenedor .contenido #title {
+    margin: 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    width: 100%;  
+}
+
+.contenedor .contenido .table table {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.contenedor .contenido .table table thead {
+    border-radius: 8px;
+}
+
+.contenedor .contenido .table table thead .sticky {
+    background-color: #12193e;
+    position: sticky;
+    top: 0;
+}
+
+.contenedor .contenido .table table thead th {
+    text-align: center;
+    padding: 15px 5px;
+    color: #fff;
+}
+
+.contenedor .contenido .table tbody tr td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 5px;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.contenedor .contenido .info table td input[type=date]:disabled{
+    background: none;
+    border: none;
+    color: black;
+}
+
+.contenedor .contenido .table tbody tr:nth-child(2n){
+    background-color: rgb(236, 236, 236);
+}
+
+.contenedor .contenido .table tbody tr:hover,
+.contenedor .contenido .table tbody tr td:hover {
+    cursor: pointer;
+    background-color: #ddd;
+    border-radius: 4px;
+}
+
+.fecha {
+    width: 130px;
+}
+
+.contenedor .contenido .info form label{
+    display: inline-block;
+    width: 100%;
+}
+
+.contenedor .contenido .info input[type=text] {
+    width: 100%;
+    padding: 10px 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+
+.contenedor .contenido .info textarea{
+    width: 100%;
+    height: 150px;
+    padding: 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+.contenedor .contenido .info input[type=date]{
+    width: 100%;
+    padding: 10px 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box;
+}
+
+.contenedor .contenido .info a{
+    margin-top: 8px;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    background: #35448f;
+    color: white;
+    padding: 14px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.contenedor .contenido .info input[type='submit']{
+    width: 100%;
+    background: #35448f;
+    color: white;
+    padding: 14px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.contenedor .contenido .info a:hover,
+.contenedor .contenido .info input[type='submit']:hover {
+    background: #12203e;
+}

@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}{% block css%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/listadosGenerales.css') }}"> 
+{% endblock %}{% block contenido %}
+<div class="notebook">
+    <a href="/listadosGenerales" id="todosLosCursos">Cantidad de Voluntarios</a>
+    <div class="frame">
+        {% block pestania %}
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static', filename='js/listadosGenerales.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categoria de Docente</title>
+    <style>
+        form {
+            width: 500px;
+            margin: 30px auto;
+            border-radius: 5px;
+            background-color: #e6e6e6;
+            padding: 20px;
+        }
+
+        p {
+            width: 500px;
+            text-transform: capitalize;
+            text-align: center;
+            padding: 12px 20px;
+            margin: 15px auto;
+            border: 1px solid rgb(0, 204, 255);
+            background: rgb(32, 64, 124);
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        input[type=number] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #35448f;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #12203e;
+        }
+
+    </style>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %} {% endif %} {% endwith %}
+    <form action="/categoriaAntiguedad/config" method="post">
+        <label for="number">Antiguedad Docente:</label>
+        <input type="number" name="antiguedad">
+        <input type="submit" value="Verificar">
+    </form>
+</body>
+</html>

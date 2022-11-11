@@ -1,0 +1,21 @@
+{% extends 'editar.html' %} {% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/infoCursos.css') }}"> {% endblock %} {% block contenido %}
+<form action="unidadesServicio/config" method="post" autocomplete="off">
+    <input type="text" id="legajo" value="{{ tripulante.info.0 }}" style="display: none;" disabled>
+    <label id="title">Unidades, Secciones donde presto servicio</label>
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %} {% endif %} {% endwith %}
+    <label for="">Desde</label><input type="date" name="desde">
+    <label for="">Hasta</label><input type="date" name="hasta">
+    <label for="">Unidad o Seccion</label><input type="text" name="unidad">
+    <input type="submit" name="guardar" value="Guardar">
+</form>
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static', filename='js/nuevoUnidadesServicio.js') }}"></script>
+{% endblock %}
+
+
+
+

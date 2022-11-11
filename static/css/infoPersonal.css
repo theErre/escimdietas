@@ -1,0 +1,90 @@
+.contenedor .contenido .info form {
+    grid-gap: info;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: "columna1 columna2"
+                        "boton boton";
+}
+
+.contenedor .contenido .info form .columna1 {
+    grid-area: columna1;
+}
+
+.contenedor .contenido .info form .columna2 {
+    grid-area: columna2;
+}
+
+.contenedor .contenido .info form label{
+    display: inline-block;
+    width: 100%;
+}
+
+.contenedor .contenido .info form input[type=text] {
+    width: 100%;
+    padding: 10px 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+
+.contenedor .contenido .info form input[type=text]:disabled,
+.contenedor .contenido .info form input[type=date]:disabled {
+    color: #000;
+}
+
+#grado {
+    text-transform: none;
+}
+
+.contenedor .contenido .info form select{
+    width: 100%;
+    padding: 8px 5px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contenedor .contenido .info form input[type=date] {
+    width: 100%;
+    margin: 8px 0;
+    padding: 8px 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contenedor .contenido .info form input[type=submit]{
+    grid-area: boton;
+    width: 100%;
+    background: #35448f;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contenedor .contenido .info form a{
+    grid-area: boton;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    background: #35448f;
+    color: white;
+    padding: 14px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contenedor .contenido .info form input[type=submit]:hover,
+.contenedor .contenido .info form a:hover {
+    background: #12203e;
+}

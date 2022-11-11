@@ -1,0 +1,22 @@
+{% extends 'editar.html' %} 
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/infoCursos.css') }}"> {% endblock %} {% block contenido %}
+<form action="{{ tripulante.cursos.0 }}/config" method="post" autocomplete="off">
+    <input type="text" id="legajo" value="{{ tripulante.info.0 }}" style="display: none;" disabled>
+    <label id="title">Aptitudes Adquiridas <br> durante su permanencia en la armada,<br> cursos Realizados, notas Adquiridas</label>
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %} {% endif %} {% endwith %}
+    <label for="">Desde</label><input type="date" name="desde" value="{{ tripulante.cursos.2 }}">
+    <label for="">Hasta</label><input type="date" name="hasta" value="{{ tripulante.cursos.3 }}">
+    <label for="">Unidad</label><input type="text" name="unidad" value="{{ tripulante.cursos.4 }}" style="text-transform: uppercase;">
+    <label for="">Sigla del Curso / Nombre del Curso</label><input type="text" name="sigla" placeholder="Ej: CP-01" value="{{ tripulante.cursos.5 }}" style="text-transform: uppercase;">
+    <label for="">Descripcion</label><textarea name="descripcion" placeholder="Tal cual figura en la libreta" rows="5">{{ tripulante.cursos.6 }}</textarea>
+    <label for="">Nota</label><input type="text" name="nota" value="{{ tripulante.cursos.7 }}">
+    <input type="submit" name="guardar" value="Guardar">
+</form>
+<a href="{{ tripulante.cursos.0 }}/deleted" id="eliminar" class="confirmation_cursos">Eliminar</a>
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static', filename='js/infoCursos.js') }}"></script>
+{% endblock %} 

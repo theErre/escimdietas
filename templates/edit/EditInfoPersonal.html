@@ -1,0 +1,66 @@
+{% extends 'editar.html' %} 
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/infoPersonal.css') }}"> 
+{% endblock %} 
+{% block contenido %}
+<form action="editInfoPersonal/config" method="post" autocomplete="off">
+    <div class="columna1">
+        <label for="nombre1">Primer Nombre</label><input type="text" name="nombre1" value="{{ tripulante.info.3 }}">
+        <label for="nombre2">Segundo Nombre</label><input type="text" name="nombre2" value="{{ tripulante.info.4 }}">
+        <label for="legajo">Legajo</label><input type="text" name="legajo" value="{{ tripulante.info.0 }}" disabled title="No se Puede Modificar">
+        <label for="especialidad">Especialidad</label><input type="text" name="especialidad" value="{{ tripulante.info.2}}" style="text-transform: uppercase;" maxlength="4">
+        <label for="compania">Compañia</label><input type="text" id="compania_actual" value="{{ tripulante.info.10 }}" disabled style="display: none;">
+            <select id="compania" name="compania" onChange="selected_seccion()">
+                <option value="0" selected>-- Seleccionar --</option>
+                <option value="compa&ntilde;a 1">Compa&ntilde;ia 1</option>
+                <option value="compa&ntilde;a 2">Compa&ntilde;ia 2</option>
+                <option value="compa&ntilde;a 3">Compa&ntilde;ia 3</option>
+                <option value="compa&ntilde;a 4">Compa&ntilde;ia 4</option>
+                <option value="compa&ntilde;a de fuerzas especiales">Compa&ntilde;ia de Fuerzas Especiales</option>
+                <option value="compa&ntilde;a de servicio">Compa&ntilde;ia de Servicio</option>
+                <option value="esim">Esim</option>
+                <option value="estado mayor">Estado Mayor</option>
+            </select>
+        <label for="lugar_nacimiento">Nacido en</label><input type="text" name="lugar_nacimiento" value="{{ tripulante.info.12 }}">
+        <label for="edad">Edad</label><input type="text" id="edad" disabled>
+        <label for="credencial_serie">Credencial Civica Serie</label><input type="text" name="credencial_serie" value="{{ tripulante.info.14 }}" style="text-transform: uppercase;" maxlength="5">
+        <label for="cedula">Cedula de Identidad</label><input type="text" name="cedula" maxlength="11" value="{{ tripulante.info.16 }}">
+    </div>
+    <div class="columna2">
+        <label for="apellido1">Primer Apellido</label><input type="text" name="apellido1" value="{{ tripulante.info.5 }}">
+        <label for="apellido2">Segundo Apellido</label><input type="text" name="apellido2" value="{{ tripulante.info.6 }}">
+        <label for="grado">Grado</label><input type="text" id="grado_actual" value="{{ tripulante.info.1 }}" disabled style="display: none;">
+            <select name="grado" id="grado">
+                <option value="CN">Capitan de Navio</option>
+                <option value="CF">Capitan de Fragata</option>
+                <option value="CC">Capitan de Corbeta</option>
+                <option value="TN">Teniente de Navio</option>
+                <option value="AN">Alferez de Navio</option>
+                <option value="AF">Alferez de Fragata</option>
+                <option value="GM">Guardia MArina</option>
+                <option value="SOC">Sub Oficial de Cargo</option>
+                <option value="SOP">Sub Ofcial de Primera</option>
+                <option value="SOS">Sub Oficial de Segunda</option>
+                <option value="CP">Cabo de Primera</option>
+                <option value="CS">Cabo de Segunda</option>
+                <option value="MP" selected>Marinero de Primera</option>
+            </select>
+        <label for="genero">Genero</label>
+            <select name="genero" id="genero">
+                <option value="hombre" selected>Hombre</option>
+                <option value="mujer">Mujer</option>
+            </select>
+        <label for="seccion">Seccion - Peloton</label><input type="text" id="seccion_actual" value="{{ tripulante.info.11 }}" disabled style="display: none;">
+            <select name="seccion" id="seccion">
+                <option value="-">-- Seleccionar --</option>
+            </select>
+        <label for="fecha_nacimiento">El dia</label><input type="date" name="fecha_nacimiento" id="fecha_nacimiento" value="{{ tripulante.info.8 }}">
+        <label for="fecha_ingreso">Fecha de ingreso</label><input type="date" name="fecha_ingreso" value="{{ tripulante.info.13 }}" id="fecha_ingreso">
+        <label for="credencial_numero">Numero</label><input type="text" name="credencial_numero" value="{{ tripulante.info.15 }}" maxlength="5">
+        <label for="antiguedad">Antiguedad Armada</label><input type="text" name="antiguedad" disabled id="antiguedadArmada" style="text-transform: none;">
+        <label for="antiguedadDocente">Antiguedad Docente</label><input type="text" name="antiguedadDocente" id="antiguedadDocente" value="{{ tripulante.info.17 }}">
+    </div>
+    <input type="submit" value="Guardar" name="guardar">
+</form>
+<script src="{{ url_for('static', filename='js/editInfoPersonal.js') }}"></script>
+{% endblock %}

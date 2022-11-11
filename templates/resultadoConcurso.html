@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/anexo1.css') }}">
+    <title>Total de Voluntarios</title>
+</head>
+<body>
+{% for datos in tripulantes %}
+    <table>
+        <tr>
+            <td colspan="6">Materia: {{ datos.1 }}</td>
+        </tr>
+        <tr>
+            <td>Ord</td>
+            <td>CI</td>
+            <td>Grado</td>
+            <td>Puntaje</td>
+            <td>Caracter</td>
+        </tr>
+        {% for i in datos.3 %}
+        <tr>
+            <td>{{ i.0 }}</td>
+            <td>{{ i.7 }}</td>
+            <td>{{ i.4 }}</td>
+            <td>{{ i.1 }}</td>
+            <td>{{ i.6 }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+{% endfor %}
+
+<script src="{{ url_for('static', filename='js/totalDeVoluntarios.js') }}"></script>
+</body>
+</html>

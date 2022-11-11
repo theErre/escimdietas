@@ -1,0 +1,17 @@
+{% extends 'editar.html' %} {% block css%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cambiarFoto.css') }}"> {% endblock %} {% block contenido %}
+{% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+<p>{{ message }}</p>
+{% endfor %} {% endif %} {% endwith %}
+<form action="load_perfil/config" method="POST" enctype="multipart/form-data">
+    <div class="load_perfil">
+        <img id="imagenPrevisualizacion">
+    </div>
+    <input type="file" id="seleccionArchivos" accept="image/*" name="perfil">
+    <label for="seleccionArchivos" class="btn_label">Seleccionar Archivo..</label>
+    <input type="submit" value="Guardar">
+</form>
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static', filename='js/cambiarFoto.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombramiento Docente</title>
+    <style>
+        body {
+            height: 842px; 
+            width: 595px; 
+            /* to centre page on screen*/ 
+            margin: 50px auto;
+            text-align: justify;
+        }
+
+        p{
+            font-family: Arial;
+            display: inline;
+            font-size: 12pt;
+        }
+    </style>
+</head>
+<body>
+    <h3>Escuela de Infanteria de Marina</h3>
+    <!--numero, apellido, nombre, grado, especialidad, legajo -- DATOS DEL 0 AL 5 RESPECTIVAMENTE -->
+    {% for datos in tripulantes %}
+        <p style="text-transform: uppercase;">{{ datos.1 }} {{ datos.4 }} {{ datos.2 }} ({{ datos.3 }})</p>
+            {% for i in datos.6 %}
+                {{ i.4 }} - {{ i.1 }} {{ i.3}},
+            {% endfor %} <br> <br>
+    {% endfor %}
+</body>
+
+</html>

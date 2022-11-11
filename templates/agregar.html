@@ -1,0 +1,22 @@
+{% extends 'layout.html' %} {% block css%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/agregar.css') }}"> {% endblock %} {% block contenido %}
+<form action="/new/config" method="POST">
+    <label id="titulo">Crea un nuevo perfil para un tripulante</label>
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %} {% endif %} {% endwith %}
+    <label for="legajo">Legajo</label><input type="text" name="legajo" maxlength="6" autocomplete="off" title="Primer Nombre">
+    <label for="Nombre">Nombre</label><input type="text" name="nombre" maxlength="20" autocomplete="off" title="Primer Apellido">
+    <label for="apellido">Apellido</label><input type="text" name="apellido" maxlength="20" autocomplete="off">
+    <label for="fecha">Fecha de Nacimiento</label><input type="date" name="fecha">
+    <label for="genero">Genero</label>
+    <select name="genero" title="Genero">
+        <option value="hombre" selected>Hombre</option>
+        <option value="mujer">Mujer</option>
+    </select>
+    <input type="submit" value="Guardar">
+</form>
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static', filename='js/agregar.js') }}"></script>
+{% endblock %}

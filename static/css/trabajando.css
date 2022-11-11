@@ -1,0 +1,12 @@
+.contenedor .contenido {
+    text-align: center;
+}
+
+.contenedor .contenido img {
+    width: 400px;
+    margin: auto;
+}
+
+.contenedor .contenido p {
+    text-align: center;
+}

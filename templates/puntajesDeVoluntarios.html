@@ -1,0 +1,35 @@
+{% extends 'layout.html' %} {% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/puntajes.css') }}"> {% endblock %} {% block contenido %}
+<div class="table">
+    <table>
+        <thead>
+            <tr class="sticky">
+                <th>Legajo</th>
+                <th>Grado</th>
+                <th>Esp</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Cursos</th>
+                <th>A. Docente</th>
+                <th>Antiguedad</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            {% for datos in tripulantes.info %}
+            <tr onclick="window.location.href='/perfil/{{ datos.0 }}/infoPersonal'">
+                <td>{{ datos.0 }}</td>
+                <td>{{ datos.1 }}</td>
+                <td>{{ datos.2 }}</td>
+                <td>{{ datos.3 }}</td>
+                <td>{{ datos.4 }}</td>
+                <td style="text-align: center;">{{ datos.5 }}</td>
+                <td style="text-align: center;">{{ datos.6 }}</td>
+                <td style="text-align: center;">{{ datos.7 }}</td>
+                <td style="text-align: center;">{{ datos.8 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

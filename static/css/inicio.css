@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 80%;
+    max-width: 500px;
+    background: #fff;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    margin: 50px auto;
+}
+
+.contenedor {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 15px;
+    grid-template-areas: "escudo" "form";
+}
+
+.contenedor .escudo {
+    grid-area: escudo;
+    margin: 20px auto;
+    background: #fff;
+
+}
+
+.contenedor .form {
+    grid-area: form;
+    border-radius: 5px;
+    background-color: #e6e6e6;
+    padding: 20px;
+}
+
+.contenedor .form label {
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+
+.contenedor .form p {
+    text-transform: capitalize;
+    text-align: center;
+    padding: 12px 20px;
+    margin: 15px 0px;
+    border: 1px solid rgb(255, 0, 0);
+    background: rgb(212, 48, 48);
+    color: #fff;
+    border-radius: 5px;
+}
+
+.contenedor .form input[type=text],
+.contenedor .form input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contenedor .form input[type=submit] {
+    width: 100%;
+    background-color: #35448f;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .contenedor .form input[type=submit]:hover {
+    background-color: #12203e;
+  }
+

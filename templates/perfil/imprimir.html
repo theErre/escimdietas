@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/imprimir.css') }}">
+    <title>{{ tripulante.info.3 }} {{ tripulante.info.5 }} </title>
+</head>
+<body>
+    <h2>Curriculum Vitae</h2>
+    <table>
+        <tr>
+            <td rowspan="7" class="perfil">
+                <img src="/static/img/imgDigitalizadas/{{ tripulante.info.0 }}/{{ tripulante.info.9 }}">
+            </td>
+        </tr>
+        <tr>
+            <td class="col1">Nombre completo</td>
+            <td>{{ tripulante.info.3 }} {{ tripulante.info.5 }}</td>
+        </tr>
+        <tr>
+            <td class="col1">Cedula de Identidad</td>
+            <td>{{ tripulante.info.16 }}</td>
+        </tr>
+        <tr>
+            <td class="col1">Domicilio</td>
+            <td>{{ tripulante.otros.3 }}</td>
+        </tr>
+        <tr>
+            <td class="col1">Numero de Celular</td>
+            <td>{{ tripulante.otros.5 }}</td>
+        </tr>
+        <tr>
+            <td class="col1">Telefono</td>
+            <td>{{ tripulante.otros.6 }}</td>
+        </tr>
+        <tr>
+            <td class="col1">Correo</td>
+            <td>{{ tripulante.otros.7 }}</td>
+        </tr>
+    </table>
+    <h3>1.<p>Aptitud docente</p></h3>
+    <table>
+        <tr>
+            <th>Informes</th>
+            <th>Folio N°</th>
+        </tr>
+        <tr>
+            <td>Certificado de antiguedad docente</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><br></td>
+            <td><br></td>
+        </tr>
+        <tr>
+            <td><br></td>
+            <td><br></td>
+        </tr>
+    </table>
+    <h3>2.<p>Cursos y capacitaciones</p></h3>
+    <h4>2.1<p>Cursos relacionados a la materia que se postula</p></h4>
+    <table>
+        <tr>
+            <th>nombre</th>
+            <th>Institucion</th>
+            <th id="fecha">Fecha</th>
+            <th>folio n°</th>
+        </tr>
+        {% if tripulante.cursos %}
+            {% for datos in tripulante.cursos %}
+                <tr>
+                    <td>{{ datos.5 }}</td>
+                    <td>{{ datos.4 }}</td>
+                    <td>{{ datos.2 }}</td>
+                    <td></td>
+                </tr>
+            {% endfor %}
+        {% else %}
+                <tr>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                </tr>
+        {% endif %}
+    </table>
+    <a onclick="window.print();">Imprimir</a>
+    <a href="/perfil/{{ tripulante.info.0 }}/infoPersonal">Volver</a>
+</body>
+</html>

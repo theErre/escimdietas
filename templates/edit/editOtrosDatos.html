@@ -1,0 +1,18 @@
+{% extends 'editar.html' %} 
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/otrosDatos.css') }}">
+{% endblock %}
+{% block contenido %}
+<form action="editOtrosDatos/config" class="form" method="post" autocomplete="off">
+    <label for="fecha_ascenso">Fecha del Ultimo Ascenso</label><input type="date" name="fecha_ascenso" value="{{ tripulante.otros.1 }}">
+    <label for="vencimiento_CarneSalud">Carné de Salud</label><input type="date" name="vencimiento_CarneSalud" value="{{ tripulante.otros.2 }}">
+    <label for="direccion_Completa">Direccion Completa</label><input type="text" name="direccion_Completa" value="{{ tripulante.otros.3 }}">
+    <label for="profecion_Diplomado">Estudios Realizados</label><input type="text" name="profecion_Diplomado" value="{{ tripulante.otros.4 }}">
+    <label id="title">Contacto</label>
+    <label for="celular">Celular</label><input type="text" name="celular" maxlength="9" value="{{ tripulante.otros.5 }}">
+    <label for="telefono">Telefono</label><input type="text" name="telefono" maxlength="8" value="{{ tripulante.otros.6 }}">
+    <label for="correo">Correo Electronico</label><input type="email" name="correo" id="correo" value="{{ tripulante.otros.7 }}">
+    <input type="submit" value="Guardar" name="guardar">
+</form>
+<script src="{{ url_for('static', filename='js/editOtrosDatos.js') }}"></script>
+{% endblock %}
